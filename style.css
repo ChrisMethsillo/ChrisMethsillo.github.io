@@ -1,0 +1,391 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Iosevka Web';
+    display: flex;
+    background-image: url('src/1216501.webp');
+    background-size: cover;
+    height: 100vh;
+}
+
+#background {
+    display: flex;
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.barra-izquierda, .barra-izquierda-clara {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 25px;
+    -webkit-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    background-color: #1a1a1a; /* Color oscuro */
+    color: #fff;
+}
+
+.barra-izquierda-clara {
+    background-color: #444343; /* Color oscuro */
+}
+
+.punto, .punto-azul {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: 10px 0; /* Ajusta el margen según sea necesario */
+}
+
+.punto {
+    background-color: #fff;
+}
+
+.punto-azul {
+    background-color: rgb(111, 111, 204);
+}
+
+#reloj {
+    font-family: 'Iosevka Web';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto; /* Empuja el reloj hacia la parte inferior de la barra */
+    margin-bottom: 0px; /* Ajusta el margen según sea necesario */
+}
+
+#hora {
+    font-size: 18px;
+}
+
+#minutos {
+    font-size: 18px;
+}
+
+#wifi-symbol {
+    font-size: 24px; /* Ajusta el tamaño según sea necesario */
+    margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+}
+
+#contenedor-derecha {
+    flex-grow: 1;
+    padding-left: 30px;
+}
+
+#cuadricula {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.boton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 3px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.terminal {
+    width: 900px;
+    height: fit-content;
+    background-color: rgba(31, 31, 31, 0.9); /* Cambia el último valor (0.8) para ajustar la transparencia */
+    border-radius: 8px;
+    overflow: hidden;
+    -webkit-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+}
+
+.titulo {
+    background-color: #333333;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.contenido {
+    color: white;
+    font-family: 'JetBrains Mono';
+    margin: 10px;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 0;
+}
+
+
+
+.contenido p {
+    margin: -1;
+    white-space: pre;
+    
+}
+
+.contenido span {
+    color: #30b4f7;
+}
+
+.contenido a {
+    color: white; /* Puedes cambiar este valor al color que desees */
+    text-decoration: underline; /* Elimina el subrayado predeterminado de los enlaces si no lo deseas */
+}
+
+/* Cambia el color de los enlaces cuando están siendo "visitados" */
+.contenido a:visited {
+    color: white; /* Puedes cambiar este valor al color que desees */
+}
+
+/* Cambia el color de los enlaces cuando están siendo "hovered" (pasando el ratón sobre ellos) */
+.contenido a:hover {
+    color: #1793D1; /* Puedes cambiar este valor al color que desees */
+}
+
+.barra-abajo {
+    color: white;
+    font-family: 'JetBrains Mono';
+    margin: 0px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 0;
+}
+
+
+
+/* Cambia el color de los enlaces cuando están siendo "activos" (haciendo clic en ellos) */
+
+/* Estilo para simular el cursor intermitente */
+@keyframes blink {
+    0%, 49% {
+        border-right: 2px solid #ffffff;
+    }
+    50%, 100% {
+        border-right: 2px solid transparent;
+    }
+}
+
+.contenido p:last-child::after {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 16px;
+    padding-top: 1px;
+    border-right: 2px solid #ffffff;
+    animation: blink 1s infinite;
+}
+
+
+.ventana {
+    width:100%;
+    height: 45vh;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: rgba(250, 247, 247, 0.9); /* Cambia el último valor (0.8) para ajustar la transparencia */
+    border-radius: 8px;
+    -webkit-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.barra-superior {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boton {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+.cerrar {
+    background-color: #f44336;
+}
+
+.minimizar {
+    background-color: #ffeb3b;
+}
+
+.maximizar {
+    background-color: #4caf50;
+}
+
+.contenido-ventana {
+    font-family: 'JetBrains Mono';
+    color: #333;
+    padding: 16px;
+    overflow-y: auto; /* Agrega overflow-y solo al contenido */
+}
+.texto-ventana {
+    text-align: center; /* Centra el contenido dentro del div */
+    margin: 20px; /* Agrega márgenes alrededor del div */
+}
+.texto-ventana img {
+    display: block; /* Hace que la imagen sea un bloque para centrarla horizontalmente */
+    margin: 10px auto; /* Centra la imagen horizontalmente dentro del div */
+}
+
+.rofi {
+    width:100%;
+    height: 45vh;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: #333; /* Cambia el último valor (0.8) para ajustar la transparencia */
+    border-radius: 8px;
+    -webkit-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    box-shadow: -17px 28px 45px -3px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.rofi-bar {
+    font-family: 'JetBrains Mono';
+    
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    justify-content: start;
+}
+
+.rofi-bar input {
+	margin-top: 10px;
+    margin-left: 10px;
+    width: 300px;
+    font-size: 13px;
+	background: none;
+	border-bottom: 1px solid white;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+.rofi-bar img{
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+.rofi-bar input:focus {
+	outline: none;
+	border-bottom: 3px solid white;
+    border-radius: 2px;
+	color: white;
+}
+
+
+::-webkit-input-placeholder {
+	color: white;
+	font-weight: bold;
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: white;
+	font-weight: bold;
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: white;
+	font-weight: bold;
+}
+
+:-ms-input-placeholder {
+	color: white;
+	font-weight: bold;
+}
+
+button {
+	width: 50px;
+	height: 50px;
+	background: none;
+	border: none;
+	position: absolute;
+	top: 200px;
+	left: 275px;
+}
+
+button:focus {
+	outline: none;
+}
+
+.fas {
+	color: white;
+	font-size: 2em;
+}
+
+
+.boton {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+.cerrar {
+    background-color: #f44336;
+}
+
+.minimizar {
+    background-color: #ffeb3b;
+}
+
+.maximizar {
+    background-color: #4caf50;
+}
+
+.rofi-content {
+    font-family: 'JetBrains Mono';
+    margin-inline: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    color: white;
+    padding: 16px;
+    overflow-y: auto; /* Agrega overflow-y solo al contenido */
+}
+.texto-ventana {
+    text-align: center; /* Centra el contenido dentro del div */
+    margin: 20px; /* Agrega márgenes alrededor del div */
+}
+.texto-ventana img {
+    display: block; /* Hace que la imagen sea un bloque para centrarla horizontalmente */
+    margin: 10px auto; /* Centra la imagen horizontalmente dentro del div */
+}
+
+.rofi-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rofi-icon {
+    margin-right: 10px;
+}
+
+.rofi-text{
+    flex-grow: 1; /* Hace que ocupe todo el espacio disponible a la derecha del icono */
+}
